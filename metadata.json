@@ -1,0 +1,8 @@
+{
+  "name": "Univer AI",
+  "description": "Universal 3D Universe Explorer and Cross-Chain DeFi Web3 Platform with PWA support for seamless updates and real-time wallet integration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

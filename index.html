@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+      <meta charset="UTF-8" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+              <title>Univer AI</title>
+                  <meta name="description" content="Universal 3D Universe Explorer and Cross-Chain DeFi Web3 Platform with PWA support for seamless updates and real-time wallet integration." />
+                      <meta property="og:title" content="Univer AI" />
+                          <meta property="og:description" content="Universal 3D Universe Explorer and Cross-Chain DeFi Web3 Platform with PWA support for seamless updates and real-time wallet integration." />
+                              <script>
+    // Gracefully filter harmless iframe proxy WebSocket and analytics connection errors
+    (function() {
+      var origError = console.error;
+      var origWarn = console.warn;
+
+      var shouldFilter = function(text) {
+        if (!text) return false;
+        var s = typeof text === 'string' ? text : String(text);
+        return (
+          s.indexOf('WebSocket closed without opened') !== -1 ||
+          (s.indexOf('[vite]') !== -1 && s.indexOf('WebSocket') !== -1) ||
+          s.indexOf('Cross-Origin-Opener-Policy') !== -1 ||
+          s.indexOf('COOP') !== -1 ||
+          s.indexOf('AnalyticsSDKApiError') !== -1 ||
+          s.indexOf('Analytics SDK') !== -1 ||
+          s.indexOf('_aistudio-iframe') !== -1 ||
+          (s.indexOf('Failed to fetch') !== -1 && (s.indexOf('Analytics') !== -1 || s.indexOf('COOP') !== -1 || s.indexOf('proxy') !== -1 || s.indexOf('_aistudio') !== -1))
+        );
+      };
+
+      var stringifyAll = function(args) {
+        var out = '';
+        for (var i = 0; i < args.length; i++) {
+          var a = args[i];
+          if (!a) continue;
+          if (a instanceof Error) {
+            out += ' ' + a.message + ' ' + (a.stack || '');
+          } else if (typeof a === 'object') {
+            try { out += ' ' + JSON.stringify(a); } catch(e) { out += ' ' + String(a); }
+          } else {
+            out += ' ' + String(a);
+          }
+        }
+        return out;
+      };
+
+      console.error = function() {
+        if (shouldFilter(stringifyAll(arguments))) return;
+        origError.apply(console, arguments);
+      };
+
+      console.warn = function() {
+        if (shouldFilter(stringifyAll(arguments))) return;
+        origWarn.apply(console, arguments);
+      };
+
+      window.addEventListener('error', function(event) {
+        var full = (event && event.message || '') + ' ' + (event && event.filename || '') + ' ' + (event && event.error && (event.error.message || '') + ' ' + (event.error.stack || ''));
+        if (shouldFilter(full)) {
+          event.stopImmediatePropagation();
+          event.preventDefault();
+        }
+      }, true);
+
+      window.addEventListener('unhandledrejection', function(event) {
+        var r = event && event.reason;
+        var full = '';
+        if (r instanceof Error) {
+          full = r.message + ' ' + (r.stack || '');
+        } else if (typeof r === 'object') {
+          try { full = JSON.stringify(r); } catch(e) { full = String(r); }
+        } else {
+          full = String(r || '');
+        }
+        if (r && r.context) full += ' ' + r.context;
+        if (shouldFilter(full)) {
+          event.stopImmediatePropagation();
+          event.preventDefault();
+        }
+      }, true);
+    })();
+  </script>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <meta name="theme-color" content="#000612" />
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <meta name="mobile-web-app-capable" content="yes" />
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <meta name="apple-mobile-web-app-capable" content="yes" />
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <meta name="apple-mobile-web-app-title" content="Univer AI" />
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <link rel="manifest" href="/manifest.json" />
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <link rel="icon" type="image/svg+xml" href="/icon.svg" />
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <link rel="preconnect" href="https://fonts.googleapis.com">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </head>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              <body class="m-0 p-0 min-h-screen font-sans antialiased bg-[#000612] text-slate-100 overflow-hidden">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  <div id="root"></div>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      <!-- Eruda removed -->
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          <script type="module" src="/src/main.tsx"></script>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </body>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            </html>
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            

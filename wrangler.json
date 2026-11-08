@@ -1,0 +1,25 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "universespacecosmicbion-worker",
+  "main": "src/worker.ts",
+  "compatibility_date": "2024-04-01",
+  "triggers": {
+    "crons": [
+      "* * * * *"
+    ]
+  },
+  "d1_databases": [
+    {
+      "binding": "APPOINTMENTS_DB",
+      "database_name": "universespacecosmicbion_appointments",
+      "database_id": "a0199795-3838-4512-b819-5ea59c5e989d"
+    }
+  ],
+  "vars": {
+    "PROJECT_ID": "a0199795-3838-4512-b819-5ea59c5e989d",
+    "INTEGRATOR_NAME": "universespacecosmicbion",
+    "LIFI_INTEGRATOR_NAME": "universespacecosmicbion",
+    "FEE_RATE": "0.008",
+    "TREASURY_ADDRESS": "0x8f9c52E62d27D4b3EC2c54B177a96A36a19d5eEb"
+  }
+}
